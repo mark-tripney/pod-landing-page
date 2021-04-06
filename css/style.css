@@ -21,10 +21,12 @@ form {
 BODY, WITH MOBILE BACKGROUND IMG
 ****************************************/
 body {
+  background: no-repeat url("../assets/mobile/mobile-masked.jpg");
+  background-size: cover;
+  height: 100vh;
   background-color: #121725;
   display: -webkit-flex;
   display: flex;
-  overflow-x: hidden;
   -webkit-flex-direction: column;
           flex-direction: column;
   -webkit-align-items: center;
@@ -33,21 +35,11 @@ body {
   body .dots {
     display: none; }
 
-body::after {
-  content: '';
-  background: url("../assets/mobile/image-host.jpg") no-repeat;
-  opacity: 0.1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  background-size: cover;
-  height: 100vh;
-  width: 100%;
-  z-index: -1; }
-
 .wrapper {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
   margin: 0 6.4%; }
 
 /****************************************  
@@ -146,29 +138,31 @@ MEDIA QUERIES: TABLET
 ****************************************/
 @media screen and (min-width: 768px) {
   body {
-    -webkit-align-items: start;
-            align-items: start;
     height: 1024px; }
     body .dots {
       display: block;
       position: absolute;
       bottom: 0;
       left: 39px; }
+    body .wrapper {
+      -webkit-align-items: flex-start;
+              align-items: flex-start; }
   /****************************************  
 	BACKGROUND IMG: TABLET
 	****************************************/
-  body::after {
-    content: '';
-    background: url("../assets/tablet/image-host.jpg") no-repeat;
-    top: 0;
-    right: 0;
-    left: calc(100% - 491px);
-    position: absolute;
+  body {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+            flex-direction: column;
+    -webkit-align-items: flex-start;
+            align-items: flex-start;
+    background: no-repeat url("../assets/tablet/image-host.jpg");
     background-size: auto;
-    opacity: 1;
-    height: 100vh;
-    width: 100%;
-    z-index: -1; }
+    background-color: #121725;
+    background-position: right top; }
+    body .dots {
+      display: block; }
   .wrapper {
     margin: 0; }
   /****************************************  
@@ -192,13 +186,13 @@ MEDIA QUERIES: TABLET
   .main-content {
     width: 635px;
     height: 509px;
-    margin-left: 39px;
-    z-index: 1;
-    background-color: #121725; }
+    background-color: #121725;
+    margin-left: 39px; }
     .main-content p {
       font-size: 18px;
       max-width: 445px;
-      line-height: 1.556; }
+      line-height: 1.556;
+      margin-bottom: 40px; }
   .podcast-players {
     -webkit-justify-content: flex-start;
             justify-content: flex-start;
@@ -225,11 +219,11 @@ MEDIA QUERIES: TABLET
   form {
     display: -webkit-flex;
     display: flex;
-    margin-top: 48px;
     -webkit-flex-direction: row;
             flex-direction: row;
     -webkit-align-items: center;
             align-items: center;
+    margin: 0 0 64px;
     width: 427px; }
     form .email-input-field,
     form .request-access-btn {

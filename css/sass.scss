@@ -32,33 +32,22 @@ BODY, WITH MOBILE BACKGROUND IMG
 ****************************************/
 
 body {
+  background: no-repeat url('../assets/mobile/mobile-masked.jpg');
+  background-size: cover;
+  height: 100vh;
   background-color: $background;
   display: flex;
-  overflow-x: hidden;
   flex-direction: column;
   align-items: center;
   position: relative;
-	.dots {
-		display: none;
-	}
-}
-
-body::after {
-  content: '';
-  background: url('../assets/mobile/image-host.jpg') no-repeat;
-  opacity: 0.1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  background-size: cover;
-  height: 100vh;
-  width: 100%;
-  z-index: -1;
+  .dots {
+    display: none;
+  }
 }
 
 .wrapper {
+  display: flex;
+  flex-direction: column;
   margin: 0 6.4%;
 }
 
@@ -83,8 +72,8 @@ main {
 }
 
 main {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 header h1 {
@@ -171,30 +160,32 @@ MEDIA QUERIES: TABLET
 
 @media screen and (min-width: 768px) {
   body {
-    align-items: start;
-		height: 1024px;
-		.dots {
-			display: block;
-			position: absolute;
-			bottom: 0;
-			left: 39px;
-		}
+    // align-items: start;
+    height: 1024px;
+    .dots {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 39px;
+    }
+    .wrapper {
+      align-items: flex-start;
+    }
   }
-	/****************************************  
+  /****************************************  
 	BACKGROUND IMG: TABLET
 	****************************************/
-  body::after {
-    content: '';
-    background: url('../assets/tablet/image-host.jpg') no-repeat;
-    top: 0;
-    right: 0;
-    left: calc(100% - 491px);
-    position: absolute;
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: no-repeat url('../assets/tablet/image-host.jpg');
     background-size: auto;
-    opacity: 1;
-    height: 100vh;
-    width: 100%;
-    z-index: -1;
+    background-color: $background;
+    background-position: right top;
+    .dots {
+      display: block;
+    }
   }
   .wrapper {
     margin: 0;
@@ -212,7 +203,7 @@ MEDIA QUERIES: TABLET
   main {
     text-align: left;
   }
-	/****************************************  
+  /****************************************  
 	HEADER AND MAIN CONTENT: TABLET
 	****************************************/
   header {
@@ -225,52 +216,52 @@ MEDIA QUERIES: TABLET
   .main-content {
     width: 635px;
     height: 509px;
-    margin-left: 39px;
-    z-index: 1;
     background-color: $background;
+    margin-left: 39px;
     p {
       font-size: 18px;
       max-width: 445px;
       line-height: 1.556;
+      margin-bottom: 40px;
     }
   }
-	.podcast-players {
-		justify-content: flex-start;
-		order: 1;
-		.spotify-logo {
-			width: auto;
-			height: 100%;
-			margin-right: 40px;
-		}
-		.apple-pod-logo {
-			width: auto;
-			height: 100%;
-			margin-right: 41px;
-		}
-		.google-pod-logo {
-			width: auto;
-			height: 100%;
-			margin-right: 27px;
-		}
-		.pocket-casts-logo {
-			width: auto;
-			height: 100%;
-		}
-	}
+  .podcast-players {
+    justify-content: flex-start;
+    order: 1;
+    .spotify-logo {
+      width: auto;
+      height: 100%;
+      margin-right: 40px;
+    }
+    .apple-pod-logo {
+      width: auto;
+      height: 100%;
+      margin-right: 41px;
+    }
+    .google-pod-logo {
+      width: auto;
+      height: 100%;
+      margin-right: 27px;
+    }
+    .pocket-casts-logo {
+      width: auto;
+      height: 100%;
+    }
+  }
   /****************************************  
 	FORM: TABLET
 	****************************************/
   form {
     display: flex;
-    margin-top: 48px;
     flex-direction: row;
     align-items: center;
+    margin: 0 0 64px;
     width: 427px;
     .email-input-field,
     .request-access-btn {
       border: none;
       border-radius: 28px;
-			flex-shrink: 0;
+      flex-shrink: 0;
       font-weight: 700;
       font-size: 14px;
     }
@@ -285,7 +276,7 @@ MEDIA QUERIES: TABLET
     .request-access-btn {
       background-color: $green;
       width: 162px;
-			transform: translateX(-167px);
+      transform: translateX(-167px);
     }
   }
 }
