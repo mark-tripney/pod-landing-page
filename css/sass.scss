@@ -1,0 +1,291 @@
+/****************************************  
+BASE STYLES
+****************************************/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$green: #54e6af;
+$white: #fff;
+$background: #121725;
+$inputField: #2c344b;
+$paleBlue: #c2cbe5;
+
+/****************************************  
+TYPE
+****************************************/
+
+h1,
+p,
+form {
+  font-family: 'Chivo', sans-serif;
+  font-weight: 300;
+}
+
+/****************************************  
+BODY, WITH MOBILE BACKGROUND IMG
+****************************************/
+
+body {
+  background-color: $background;
+  display: flex;
+  overflow-x: hidden;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+	.dots {
+		display: none;
+	}
+}
+
+body::after {
+  content: '';
+  background: url('../assets/mobile/image-host.jpg') no-repeat;
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+}
+
+.wrapper {
+  margin: 0 6.4%;
+}
+
+/****************************************  
+LOGO
+****************************************/
+
+.logo {
+  display: block;
+  width: 96px;
+  height: 40px;
+  margin: 62px auto 74px;
+}
+
+/****************************************  
+WRITTEN CONTENT
+****************************************/
+
+header,
+main {
+  text-align: center;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+}
+
+header h1 {
+  text-transform: uppercase;
+  margin: 0 0 15px;
+  color: $white;
+  font-size: 26px;
+  line-height: 1.462;
+  .highlight {
+    color: $green;
+  }
+}
+
+main p {
+  margin-bottom: 33px;
+}
+
+main p {
+  color: $paleBlue;
+  font-size: 15px;
+  line-height: 1.667;
+}
+
+/****************************************  
+PODCAST PLAYERS
+****************************************/
+
+.podcast-players {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  .spotify-logo {
+    width: 56px;
+    height: 17px;
+  }
+  .apple-pod-logo {
+    width: 46px;
+    height: 17px;
+  }
+  .google-pod-logo {
+    width: 73px;
+    height: 11px;
+  }
+  .pocket-casts-logo {
+    width: 77px;
+    height: 15px;
+  }
+}
+
+/****************************************  
+FORM
+****************************************/
+
+form {
+  display: flex;
+  margin-top: 48px;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  .email-input-field,
+  .request-access-btn {
+    width: 100%;
+    height: 46px;
+    border: none;
+    border-radius: 28px;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .email-input-field {
+    margin-bottom: 16px;
+    padding-left: 32px;
+    background-color: $inputField;
+    color: $white;
+  }
+  .request-access-btn {
+    background-color: $green;
+  }
+}
+
+/****************************************  
+MEDIA QUERIES: TABLET
+****************************************/
+
+@media screen and (min-width: 768px) {
+  body {
+    align-items: start;
+		height: 1024px;
+		.dots {
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 39px;
+		}
+  }
+	/****************************************  
+	BACKGROUND IMG: TABLET
+	****************************************/
+  body::after {
+    content: '';
+    background: url('../assets/tablet/image-host.jpg') no-repeat;
+    top: 0;
+    right: 0;
+    left: calc(100% - 491px);
+    position: absolute;
+    background-size: auto;
+    opacity: 1;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+  }
+  .wrapper {
+    margin: 0;
+  }
+  /****************************************  
+	LOGO: TABLET
+	****************************************/
+  .logo {
+    display: inline;
+    width: 135px;
+    height: 56px;
+    margin: 50px 0 152px 39px;
+  }
+  header,
+  main {
+    text-align: left;
+  }
+	/****************************************  
+	HEADER AND MAIN CONTENT: TABLET
+	****************************************/
+  header {
+    h1 {
+      font-size: 48px;
+      line-height: 1.167;
+      padding-top: 93px;
+    }
+  }
+  .main-content {
+    width: 635px;
+    height: 509px;
+    margin-left: 39px;
+    z-index: 1;
+    background-color: $background;
+    p {
+      font-size: 18px;
+      max-width: 445px;
+      line-height: 1.556;
+    }
+  }
+	.podcast-players {
+		justify-content: flex-start;
+		order: 1;
+		.spotify-logo {
+			width: auto;
+			height: 100%;
+			margin-right: 40px;
+		}
+		.apple-pod-logo {
+			width: auto;
+			height: 100%;
+			margin-right: 41px;
+		}
+		.google-pod-logo {
+			width: auto;
+			height: 100%;
+			margin-right: 27px;
+		}
+		.pocket-casts-logo {
+			width: auto;
+			height: 100%;
+		}
+	}
+  /****************************************  
+	FORM: TABLET
+	****************************************/
+  form {
+    display: flex;
+    margin-top: 48px;
+    flex-direction: row;
+    align-items: center;
+    width: 427px;
+    .email-input-field,
+    .request-access-btn {
+      border: none;
+      border-radius: 28px;
+			flex-shrink: 0;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .email-input-field {
+      width: 427px;
+      margin-bottom: 0;
+      padding-left: 32px;
+      height: 56px;
+      background-color: $inputField;
+      color: $white;
+    }
+    .request-access-btn {
+      background-color: $green;
+      width: 162px;
+			transform: translateX(-167px);
+    }
+  }
+}
