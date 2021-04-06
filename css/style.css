@@ -132,6 +132,8 @@ form {
     color: #fff; }
   form .request-access-btn {
     background-color: #54e6af; }
+  form .request-access-btn:hover {
+    background-color: #B3FFE2; }
 
 /****************************************  
 MEDIA QUERIES: TABLET

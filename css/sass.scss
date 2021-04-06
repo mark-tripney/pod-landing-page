@@ -152,6 +152,10 @@ form {
   .request-access-btn {
     background-color: $green;
   }
+	// TODO: Hover effect only if field has content
+	.request-access-btn:hover {
+		background-color: #B3FFE2;
+	}
 }
 
 /****************************************  
