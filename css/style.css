@@ -260,7 +260,8 @@ MEDIA QUERIES: DESKTOP
       display: block;
       position: absolute;
       right: 0;
-      top: 688px; }
+      top: 688px;
+      margin: 0; }
   /****************************************
   HEADER AND MAIN CONTENT: DESKTOP
   ****************************************/
