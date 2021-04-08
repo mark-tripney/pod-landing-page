@@ -1,4 +1,4 @@
-/****************************************  
+/****************************************
 BASE STYLES
 ****************************************/
 
@@ -16,7 +16,7 @@ $background: #121725;
 $inputField: #2c344b;
 $paleBlue: #c2cbe5;
 
-/****************************************  
+/****************************************
 TYPE
 ****************************************/
 
@@ -27,19 +27,17 @@ form {
   font-weight: 300;
 }
 
-/****************************************  
+/****************************************
 BODY, WITH MOBILE BACKGROUND IMG
 ****************************************/
 
 body {
-  background: no-repeat url('../assets/mobile/mobile-masked.jpg');
+  background: $background url('../assets/mobile/mobile-masked.jpg') no-repeat;
   background-size: cover;
-  height: 100vh;
-  background-color: $background;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
+  postion: relative;
   .dots {
     display: none;
   }
@@ -48,10 +46,12 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
+  wdith: 100%;
+  height: 100%;
   margin: 0 6.4%;
 }
 
-/****************************************  
+/****************************************
 LOGO
 ****************************************/
 
@@ -62,7 +62,7 @@ LOGO
   margin: 62px auto 74px;
 }
 
-/****************************************  
+/****************************************
 WRITTEN CONTENT
 ****************************************/
 
@@ -82,6 +82,7 @@ header h1 {
   color: $white;
   font-size: 26px;
   line-height: 1.462;
+
   .highlight {
     color: $green;
   }
@@ -97,7 +98,7 @@ main p {
   line-height: 1.667;
 }
 
-/****************************************  
+/****************************************
 PODCAST PLAYERS
 ****************************************/
 
@@ -106,25 +107,29 @@ PODCAST PLAYERS
   justify-content: space-between;
   align-items: center;
   width: 100%;
+
   .spotify-logo {
     width: 56px;
     height: 17px;
   }
+
   .apple-pod-logo {
     width: 46px;
     height: 17px;
   }
+
   .google-pod-logo {
     width: 73px;
     height: 11px;
   }
+
   .pocket-casts-logo {
     width: 77px;
     height: 15px;
   }
 }
 
-/****************************************  
+/****************************************
 FORM
 ****************************************/
 
@@ -134,6 +139,7 @@ form {
   flex-direction: column;
   align-items: center;
   width: 100%;
+
   .email-input-field,
   .request-access-btn {
     width: 100%;
@@ -143,60 +149,52 @@ form {
     font-weight: 700;
     font-size: 14px;
   }
+
   .email-input-field {
     margin-bottom: 16px;
     padding-left: 32px;
     background-color: $inputField;
     color: $white;
   }
+
   .request-access-btn {
     background-color: $green;
   }
-	// TODO: Hover effect only if field has content
-	.request-access-btn:hover {
-		background-color: #B3FFE2;
-	}
+
+  // TODO: Hover effect only if field has content
+  .request-access-btn:hover {
+    background-color: #b3ffe2;
+  }
 }
 
-/****************************************  
+/****************************************
 MEDIA QUERIES: TABLET
 ****************************************/
 
 @media screen and (min-width: 768px) {
   body {
-    // align-items: start;
-    height: 1024px;
-    .dots {
-      display: block;
-      position: absolute;
-      bottom: 0;
-      left: 39px;
-    }
-    .wrapper {
-      align-items: flex-start;
-    }
-  }
-  /****************************************  
-	BACKGROUND IMG: TABLET
-	****************************************/
-  body {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background: no-repeat url('../assets/tablet/image-host.jpg');
     background-size: auto;
-    background-color: $background;
-    background-position: right top;
+    background: $background url('../assets/tablet/image-host.jpg') no-repeat
+      right top;
     .dots {
       display: block;
+      margin-top: 153px;
+      margin-left: 39px;
+    }
+    .wrapper {
+      align-items: flex-start;
+      margin: 0;
     }
   }
-  .wrapper {
-    margin: 0;
-  }
-  /****************************************  
+
+  /****************************************
 	LOGO: TABLET
 	****************************************/
+
   .logo {
     display: inline;
     width: 135px;
@@ -207,9 +205,11 @@ MEDIA QUERIES: TABLET
   main {
     text-align: left;
   }
-  /****************************************  
+
+  /****************************************
 	HEADER AND MAIN CONTENT: TABLET
 	****************************************/
+
   header {
     h1 {
       font-size: 48px;
@@ -222,6 +222,7 @@ MEDIA QUERIES: TABLET
     height: 509px;
     background-color: $background;
     margin-left: 39px;
+
     p {
       font-size: 18px;
       max-width: 445px;
@@ -232,35 +233,42 @@ MEDIA QUERIES: TABLET
   .podcast-players {
     justify-content: flex-start;
     order: 1;
+
     .spotify-logo {
       width: auto;
       height: 100%;
       margin-right: 40px;
     }
+
     .apple-pod-logo {
       width: auto;
       height: 100%;
       margin-right: 41px;
     }
+
     .google-pod-logo {
       width: auto;
       height: 100%;
       margin-right: 27px;
     }
+
     .pocket-casts-logo {
       width: auto;
       height: 100%;
     }
   }
-  /****************************************  
+
+  /****************************************
 	FORM: TABLET
 	****************************************/
+
   form {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin: 0 0 64px;
     width: 427px;
+
     .email-input-field,
     .request-access-btn {
       border: none;
@@ -269,6 +277,7 @@ MEDIA QUERIES: TABLET
       font-weight: 700;
       font-size: 14px;
     }
+
     .email-input-field {
       width: 427px;
       margin-bottom: 0;
@@ -277,10 +286,70 @@ MEDIA QUERIES: TABLET
       background-color: $inputField;
       color: $white;
     }
+
     .request-access-btn {
       background-color: $green;
       width: 162px;
       transform: translateX(-167px);
     }
+  }
+}
+
+/****************************************
+MEDIA QUERIES: DESKTOP
+****************************************/
+
+@media screen and (min-width: 1440px) {
+  body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-size: 888px 640px;
+    background: $background url('../assets/desktop/image-host.jpg') no-repeat
+      right top 100px;
+    .wrapper {
+      align-items: flex-start;
+      margin: 0;
+    }
+    .dots {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 688px;
+    }
+  }
+
+  /****************************************
+  HEADER AND MAIN CONTENT: DESKTOP
+  ****************************************/
+
+  .logo {
+    display: inline;
+    width: 135px;
+    height: 56px;
+    margin: 72px 0 103px 165px;
+  }
+  header {
+    h1 {
+      font-size: 52px;
+      line-height: 1.192;
+    }
+  }
+  .main-content {
+    width: 723px;
+    height: 509px;
+    background-color: $background;
+    margin-left: 165px;
+
+    p {
+      font-size: 18px;
+      max-width: 445px;
+      line-height: 1.556;
+      margin-bottom: 40px;
+    }
+  }
+  .podcast-players {
+    margin-bottom: 0;
   }
 }

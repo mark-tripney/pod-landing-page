@@ -1,4 +1,4 @@
-/****************************************  
+/****************************************
 BASE STYLES
 ****************************************/
 *,
@@ -8,7 +8,7 @@ BASE STYLES
   padding: 0;
   box-sizing: border-box; }
 
-/****************************************  
+/****************************************
 TYPE
 ****************************************/
 h1,
@@ -17,21 +17,19 @@ form {
   font-family: 'Chivo', sans-serif;
   font-weight: 300; }
 
-/****************************************  
+/****************************************
 BODY, WITH MOBILE BACKGROUND IMG
 ****************************************/
 body {
-  background: no-repeat url("../assets/mobile/mobile-masked.jpg");
+  background: #121725 url("../assets/mobile/mobile-masked.jpg") no-repeat;
   background-size: cover;
-  height: 100vh;
-  background-color: #121725;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
           flex-direction: column;
   -webkit-align-items: center;
           align-items: center;
-  position: relative; }
+  postion: relative; }
   body .dots {
     display: none; }
 
@@ -40,9 +38,11 @@ body {
   display: flex;
   -webkit-flex-direction: column;
           flex-direction: column;
+  wdith: 100%;
+  height: 100%;
   margin: 0 6.4%; }
 
-/****************************************  
+/****************************************
 LOGO
 ****************************************/
 .logo {
@@ -51,7 +51,7 @@ LOGO
   height: 40px;
   margin: 62px auto 74px; }
 
-/****************************************  
+/****************************************
 WRITTEN CONTENT
 ****************************************/
 header,
@@ -81,7 +81,7 @@ main p {
   font-size: 15px;
   line-height: 1.667; }
 
-/****************************************  
+/****************************************
 PODCAST PLAYERS
 ****************************************/
 .podcast-players {
@@ -105,7 +105,7 @@ PODCAST PLAYERS
     width: 77px;
     height: 15px; }
 
-/****************************************  
+/****************************************
 FORM
 ****************************************/
 form {
@@ -133,41 +133,31 @@ form {
   form .request-access-btn {
     background-color: #54e6af; }
   form .request-access-btn:hover {
-    background-color: #B3FFE2; }
+    background-color: #b3ffe2; }
 
-/****************************************  
+/****************************************
 MEDIA QUERIES: TABLET
 ****************************************/
 @media screen and (min-width: 768px) {
   body {
-    height: 1024px; }
-    body .dots {
-      display: block;
-      position: absolute;
-      bottom: 0;
-      left: 39px; }
-    body .wrapper {
-      -webkit-align-items: flex-start;
-              align-items: flex-start; }
-  /****************************************  
-	BACKGROUND IMG: TABLET
-	****************************************/
-  body {
+    height: 100%;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-direction: column;
             flex-direction: column;
     -webkit-align-items: flex-start;
             align-items: flex-start;
-    background: no-repeat url("../assets/tablet/image-host.jpg");
     background-size: auto;
-    background-color: #121725;
-    background-position: right top; }
+    background: #121725 url("../assets/tablet/image-host.jpg") no-repeat right top; }
     body .dots {
-      display: block; }
-  .wrapper {
-    margin: 0; }
-  /****************************************  
+      display: block;
+      margin-top: 153px;
+      margin-left: 39px; }
+    body .wrapper {
+      -webkit-align-items: flex-start;
+              align-items: flex-start;
+      margin: 0; }
+  /****************************************
 	LOGO: TABLET
 	****************************************/
   .logo {
@@ -178,7 +168,7 @@ MEDIA QUERIES: TABLET
   header,
   main {
     text-align: left; }
-  /****************************************  
+  /****************************************
 	HEADER AND MAIN CONTENT: TABLET
 	****************************************/
   header h1 {
@@ -215,7 +205,7 @@ MEDIA QUERIES: TABLET
     .podcast-players .pocket-casts-logo {
       width: auto;
       height: 100%; }
-  /****************************************  
+  /****************************************
 	FORM: TABLET
 	****************************************/
   form {
@@ -247,3 +237,50 @@ MEDIA QUERIES: TABLET
       width: 162px;
       -webkit-transform: translateX(-167px);
               transform: translateX(-167px); } }
+
+/****************************************
+MEDIA QUERIES: DESKTOP
+****************************************/
+@media screen and (min-width: 1440px) {
+  body {
+    height: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+            flex-direction: column;
+    -webkit-align-items: flex-start;
+            align-items: flex-start;
+    background-size: 888px 640px;
+    background: #121725 url("../assets/desktop/image-host.jpg") no-repeat right top 100px; }
+    body .wrapper {
+      -webkit-align-items: flex-start;
+              align-items: flex-start;
+      margin: 0; }
+    body .dots {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 688px; }
+  /****************************************
+  HEADER AND MAIN CONTENT: DESKTOP
+  ****************************************/
+  .logo {
+    display: inline;
+    width: 135px;
+    height: 56px;
+    margin: 72px 0 103px 165px; }
+  header h1 {
+    font-size: 52px;
+    line-height: 1.192; }
+  .main-content {
+    width: 723px;
+    height: 509px;
+    background-color: #121725;
+    margin-left: 165px; }
+    .main-content p {
+      font-size: 18px;
+      max-width: 445px;
+      line-height: 1.556;
+      margin-bottom: 40px; }
+  .podcast-players {
+    margin-bottom: 0; } }
